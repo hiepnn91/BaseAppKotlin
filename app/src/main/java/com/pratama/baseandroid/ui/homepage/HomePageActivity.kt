@@ -62,7 +62,6 @@ class HomePageActivity : BaseActivity() {
             override fun onClick(view: View, position: Int) {
                 when (position) {
                     0 -> {
-                        // # Home Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Home Fragment")
                         val homeFragment = DemoFragment()
