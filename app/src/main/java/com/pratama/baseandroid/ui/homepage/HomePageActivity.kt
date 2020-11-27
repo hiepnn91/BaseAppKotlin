@@ -109,7 +109,6 @@ class HomePageActivity : BaseActivity() {
                             .replace(R.id.container, settingsFragment).commit()
                     }
                     6 -> {
-                        // # Open URL in browser
                         val uri: Uri = Uri.parse("https://johnc.co/fb")
                         val intent = Intent(Intent.ACTION_VIEW, uri)
                         startActivity(intent)
