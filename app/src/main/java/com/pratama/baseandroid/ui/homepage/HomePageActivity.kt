@@ -14,14 +14,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.costular.kotlin_utils.activity.hideToolbar
 import com.example.customnavigationdrawerexample.*
 import com.pratama.baseandroid.R
 import com.pratama.baseandroid.coreandroid.BaseActivity
-import com.pratama.baseandroid.coreandroid.BaseFragment
 import com.pratama.baseandroid.model.Event
 import com.pratama.baseandroid.utils.EventBus
 import com.pratama.baseandroid.utils.FragmentUtil.addFragment
@@ -104,7 +100,6 @@ class HomePageActivity : BaseActivity() {
                             .replace(R.id.container, booksFragment).commit()
                     }
                     4 -> {
-                        // # Profile Activity
                         val intent = Intent(this@HomePageActivity, DemoActivity::class.java)
                         intent.putExtra("activityName", "Profile Activity")
                         startActivity(intent)
@@ -140,7 +135,7 @@ class HomePageActivity : BaseActivity() {
 
         // Set 'Home' as the default fragment when the app starts
         val homeFragment = DemoFragment()
-        replaceFragment(homeFragment.newInstance("hey")!!, R.id.container)
+        replaceFragment(homeFragment.newInstance("hey"), R.id.container)
 
         // Close the soft keyboard when you open or close the Drawer
         val toggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
@@ -184,21 +179,21 @@ class HomePageActivity : BaseActivity() {
 
         // Set background of Drawer
         navigation_layout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_left);// set drawable icon
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_left)// set drawable icon
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         disposable =
             EventBus.subscribe<Event.SomeEvent>()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     Logg.e("event received: $it")
-                    activity_main_toolbar_title.setText("${it.text}")
+                    activity_main_toolbar_title.text = "${it.text}"
                 }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
-        return when (item.getItemId()) {
+        return when (item.itemId) {
             R.id.action_add -> {
                 Toast.makeText(this, "add", Toast.LENGTH_SHORT).show()
                 true
