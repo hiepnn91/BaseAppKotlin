@@ -91,7 +91,6 @@ class HomePageActivity : BaseActivity() {
                             .replace(R.id.container, moviesFragment).commit()
                     }
                     3 -> {
-                        // # Books Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Books Fragment")
                         val booksFragment = DemoFragment()
