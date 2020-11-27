@@ -21,6 +21,7 @@
 /.gradle/6.5/gc.properties
 /.gradle/vcs-1/gc.properties
 /.idea/gradle.xml
+/.idea/*
 /.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml
 /.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml
 /.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml
