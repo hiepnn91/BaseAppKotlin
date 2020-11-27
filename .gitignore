@@ -169,3 +169,7 @@
 /.gradle/checksums/sha1-checksums.bin
 .gradle/6.5/.DS_Store
 .idea/modules/.DS_Store
+.DS_Store
+app/.DS_Store
+app/src/.DS_Store
+buildSrc/.gradle/.DS_Store
