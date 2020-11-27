@@ -82,7 +82,6 @@ class HomePageActivity : BaseActivity() {
                         addFragment(musicFragment, R.id.container)
                     }
                     2 -> {
-                        // # Movies Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Movies Fragment")
                         val moviesFragment = DemoFragment()
