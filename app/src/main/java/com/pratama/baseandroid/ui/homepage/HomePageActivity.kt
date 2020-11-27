@@ -104,7 +104,6 @@ class HomePageActivity : BaseActivity() {
                         startActivity(intent)
                     }
                     5 -> {
-                        // # Settings Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Settings Fragment")
                         val settingsFragment = DemoFragment()
