@@ -167,3 +167,5 @@
 /.idea/sonarlint/issuestore/index.pb
 /.gradle/checksums/md5-checksums.bin
 /.gradle/checksums/sha1-checksums.bin
+.gradle/6.5/.DS_Store
+.idea/modules/.DS_Store
