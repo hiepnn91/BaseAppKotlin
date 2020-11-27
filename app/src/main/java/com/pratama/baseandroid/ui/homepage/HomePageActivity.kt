@@ -71,7 +71,6 @@ class HomePageActivity : BaseActivity() {
                             .replace(R.id.container, homeFragment).commit()
                     }
                     1 -> {
-                        // # Music Fragment
                         val bundle = Bundle()
                         bundle.putString("fragmentName", "Music Fragment")
                         val musicFragment = DemoFragment()
