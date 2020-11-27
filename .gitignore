@@ -173,3 +173,4 @@
 app/.DS_Store
 app/src/.DS_Store
 buildSrc/.gradle/.DS_Store
+/buildSrc/.gradle/6.5/executionHistory/executionHistory.lock
