@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context="com.example.customnavigationdrawerexample.DemoFragment">
+
+    <TextView
+        android:id="@+id/tv_name_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment Name"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnBackToFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name_third"
+        android:text="back To First" />
+
+    <Button
+        android:id="@+id/btnEventToFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBackToFirst"
+        android:text="Event to first" />
+</RelativeLayout>

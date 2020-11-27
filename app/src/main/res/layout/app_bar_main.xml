@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_content_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.homepage.HomePageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_main_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:weightSum="1"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/PopupMenu"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <TextView
+                android:id="@+id/activity_main_toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="asdasdasd"
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

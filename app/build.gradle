@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion AndroidConfig.compileSdkVersion
+    buildToolsVersion AndroidConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.pratama.baseandroid"
+        minSdkVersion AndroidConfig.minSdkVersion
+        targetSdkVersion AndroidConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+
+kapt {
+    generateStubs = true
+}
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(":core-android")
+    implementation project(":routing")
+    implementation AndroidLib.material
+    implementation AndroidLib.kotlin_stdlib
+    implementation AndroidLib.androidx_core
+    implementation AndroidLib.androidx_appcompat
+    implementation AndroidLib.androidx_constraintlayout
+
+    implementation AndroidLib.retrofit_android
+    implementation(AndroidLib.gson_converter)
+    implementation AndroidLib.okhttp_logging
+    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation(AndroidLib.groupie)
+    implementation(AndroidLib.groupie_kotline_ext)
+
+    implementation(AndroidLib.room)
+    implementation(AndroidLib.room_coroutine)
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    kapt(AndroidLib.room_compiler)
+    implementation(AndroidLib.viewmodel_ktx)
+    implementation(AndroidLib.viewmodel_runtime)
+    implementation(AndroidLib.viewmodel_extension)
+    kapt(AndroidLib.viewmodel_compiler)
+    implementation 'com.costular:kotlin-utils:0.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation(AndroidLib.timber)
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation AndroidLib.hilt
+    kapt AndroidLib.hilt_processor_compiler
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    testImplementation AndroidTestLib.junit_lib
+    androidTestImplementation AndroidTestLib.android_test_junit
+    androidTestImplementation AndroidTestLib.android_test_espresso_core
+
+}

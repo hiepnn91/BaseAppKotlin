@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.customnavigationdrawerexample.DemoFragment">
+
+    <TextView
+        android:id="@+id/fragment_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment Name"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnGotoSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_name"
+        android:text="Go to second" />
+
+    <EditText
+        android:id="@+id/edtFocus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnGotoSecond"
+        android:hint="focus" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtFocus"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp" />
+</RelativeLayout>
